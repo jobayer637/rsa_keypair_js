@@ -18,6 +18,8 @@ class Rsa
         $this->_config['public_key'] = $this->_getContents($public_key_filepath);
     }
 
+    
+
     /**
      * @uses 获取文件内容
      * @param $file_path string
@@ -67,6 +69,8 @@ class Rsa
         if (!is_string($data)) {
             return null;
         }
+        //var_dump(openssl_public_encrypt('আমার বাংলা নিয়ে প্রথম কাজ করবার সুযোগ তৈরি হয়েছিল অভ্র^ নামক এক যুগান্তকারী বাংলা সফ্‌টওয়্যার', $encrypted, $this->_getPublicKey()) ? base64_encode($encrypted) : null);
+        echo "<br><br>";
         return openssl_public_encrypt($data, $encrypted, $this->_getPublicKey()) ? base64_encode($encrypted) : null;
     }
 
